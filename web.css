@@ -1,0 +1,212 @@
+ 
+ body{
+   background-color: #000;
+ }
+ .section2{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    top:45%;
+    color: #fff;
+ }
+ .section3{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    top:91%;
+    color: #fff;
+ }
+ .section {
+    
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    color: #fff;
+}
+.section h4{
+  color: #fff;
+  font-size: 25px;
+}
+.section2 h4{
+    color: #fff;
+    font-size: 25px;
+  }
+  .section3 h4{
+    color: #fff;
+    font-size: 25px;
+  }
+ 
+.section1 .cards {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /* border: 1px solid #fff; */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.section1 .cards::-webkit-scrollbar {
+    display: none;
+}
+
+.section1 .cards .card {
+    position: relative;
+    min-width: 130px;
+    height: 180px;
+    /* border: 1px solid #fff; */
+    border-radius: 8px;
+    margin-right: 10px;
+    background: #000;
+    transition: .3s linear;
+}
+
+.section1 .cards .card .poster {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    position: relative;
+}
+
+.section1 .cards .card:hover {
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.section1 .cards .card .rest_card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    opacity: 0;
+    transition: 1s linear;
+}
+
+.section1 .cards .card .rest_card img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.section1 .cards .card .rest_card::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #000);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.section1 .cards .card .rest_card .cont {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    padding: 0px 20px;
+}
+
+.section1 .cards .card .rest_card .cont .sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section1 .cards .card .rest_card .cont .sub p {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, .7);
+}
+
+.section1 .cards .card .rest_card .cont .sub h3 {
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.section1 .cards .card .rest_card .cont .sub h3 span {
+    background: yellow;
+    color: #000;
+    padding: 0px 3px;
+    margin: 0px 5px 0px 10px;
+    font-weight: 500;
+    border-radius: 2px;
+}
+
+.section1 .cards .card .rest_card .cont .sub h3 i {
+    margin-right: 3px;
+}
+
+.section1 .cards .card:hover .rest_card {
+    opacity: 1;
+}
+
+.section1 .bi-chevron-left,
+.bi-chevron-right {
+    position: absolute;
+    top: 55%;
+    left: 6%;
+    width: 50px;
+    height: 50px;
+    background: rgb(255, 255, 255, .3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s linear;
+    z-index: 999999999;
+    opacity: 0;
+}
+
+.section1 .bi-chevron-right {
+    left: unset;
+}
+
+.section1:hover .bi-chevron-right {
+    right: 10vw;
+    opacity: 1;
+}
+
+.section1:hover .bi-chevron-left {
+    opacity: 1;
+}
+@media screen and (max-width: 800px) {
+    
+    .section1 {
+       padding: 0px 10px;
+   }
+   .section2{
+  top: 50%;
+   }
+   .section3{
+     top:100%;
+     }
+}
+@media screen and (max-width: 650px) {
+    
+     .section1 {
+        padding: 0px 10px;
+    }
+    .section2{
+   top: 35%;
+    }
+    .section3{
+        top:70%;
+         }
+}

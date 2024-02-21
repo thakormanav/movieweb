@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Input</title>
+</head>
+<body>
+  <h1>Voice Input Demo</h1>
+  
+  <form>
+    <label for="voiceInput">Speak into the microphone:</label>
+    <input type="text" id="voiceInput" name="voiceInput" readonly>
+    <button type="button" onclick="startSpeechRecognition()">Start Voice Input</button>
+  </form>
+
+  <script>
+    function startSpeechRecognition() {
+      const voiceInput = document.getElementById('voiceInput');
+      
+      // Check if the browser supports the SpeechRecognition API
+      if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+
+        recognition.onstart = () => {
+          console.log('Speech recognition started');
+        };
+
+        recognition.onresult = (event) => {
+          const result = event.results[0][0].transcript;
+          voiceInput.value = result;
+        };
+
+        recognition.onend = () => {
+          console.log('Speech recognition ended');
+        };
+
+        recognition.onerror = (event) => {
+          console.error('Speech recognition error:', event.error);
+        };
+
+        recognition.start();
+      } else {
+        alert('Speech recognition is not supported in this browser.');
+      }
+    }
+  </script>
+</body>
+</html>
